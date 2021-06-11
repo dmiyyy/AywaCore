@@ -16,11 +16,11 @@ jobs:
     - name: autogen
       run: ./autogen.sh
     - name: add repo
-      run: add-apt-repository ppa:bitcoin/bitcoin
+      run: sudo add-apt-repository ppa:bitcoin/bitcoin
     - name: update repo
-      run: apt-get update
+      run: sudo apt-get update
     - name: install deps db
-      run: apt-get install libdb4.8-dev libdb4.8++-dev
+      run: sudo apt-get install libdb4.8-dev libdb4.8++-dev
     - name: configure
       run: ./configure
     - name: make
