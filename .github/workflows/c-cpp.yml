@@ -16,7 +16,7 @@ jobs:
     - name: autogen
       run: ./autogen.sh
     - name: add repo
-      run: sudo add-apt-repository ppa:bitcoin/bitcoin
+      run: sudo add-apt-repository ppa:bitcoin/bitcoin -y
     - name: update repo
       run: sudo apt-get update
     - name: install deps db
