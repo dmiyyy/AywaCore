@@ -159,6 +159,11 @@ cd db-4.8.30.NC/build_unix/
 #  Note: Do a static build so that it can be embedded into the executable, instead of having to find a .so at runtime
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 make install
+#if errors in atomic.h
+nano db-4.8.30.NC/dbinc/atomic.h
+replace line //static inline int __atomic_compare_exchange(
+with
+static inline int __atomic_compare_exchange_db(
 
 # Configure Aywa Core to use our own-built instance of BDB
 cd $AYWA_ROOT
